@@ -16,12 +16,12 @@ public class start extends JFrame implements ActionListener {
 
 	public start() {
 		super(); // Gọi constructor của lớp cha (JFrame)
-		this.setSize(600, 1050); // Đặt kích thước cửa sổ
-		this.setLocationRelativeTo(null); // Đặt vị trí của cửa sổ ở giữa màn hình
-		this.setTitle("Game Caro 2024"); // Đặt tiêu đề của cửa sổ
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // Thiết lập hoạt động mặc định khi đóng cửa sổ
-		this.setResizable(false); // Không cho phép thay đổi kích thước cửa sổ
-		this.init1(); // Khởi tạo giao diện
+		this.setSize(600, 1050); 
+		this.setLocationRelativeTo(null);
+		this.setTitle("Game Caro 2024");
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setResizable(false); 
+		this.init1();
 	}
 
 	public void init1() {
@@ -30,27 +30,27 @@ public class start extends JFrame implements ActionListener {
 		JPanel panel2 = new JPanel(); // Panel cho hai ô văn bản
 		JPanel panel3 = new JPanel(); // Panel cho các nút
 
-		panel.setSize(390, 600); // Đặt kích thước của panel chính
-		panel1.setBounds(10, 550, 80, 80); // Đặt vị trí của panel1
-		panel2.setBounds(150, 550, 300, 80); // Đặt vị trí của panel2
-		panel3.setBounds(165, 650, 250, 210); // Đặt vị trí của panel3
+		panel.setSize(390, 600); 
+		panel1.setBounds(10, 550, 80, 80); 
+		panel2.setBounds(150, 550, 300, 80);
+		panel3.setBounds(165, 650, 250, 210);
 
-		panel.setLayout(null); // Thiết lập layout của panel thành null
-		panel1.setLayout(new GridLayout(2, 1, 10, 10)); // Thiết lập layout của panel1 thành grid 2x1
-		panel2.setLayout(new GridLayout(2, 1, 10, 10)); // Thiết lập layout của panel2 thành grid 2x1
-		panel3.setLayout(new GridLayout(3, 1, 10, 10)); // Thiết lập layout của panel3 thành grid 3x1
-		panel.setBackground(Color.yellow); // Đặt màu nền của panel thành màu vàng
-		panel1.setBackground(Color.yellow); // Đặt màu nền của panel1 thành màu vàng
-		panel2.setBackground(Color.yellow); // Đặt màu nền của panel2 thành màu vàng
-		panel3.setBackground(Color.yellow); // Đặt màu nền của panel3 thành màu vàng
+		panel.setLayout(null); 
+		panel1.setLayout(new GridLayout(2, 1, 10, 10));
+		panel2.setLayout(new GridLayout(2, 1, 10, 10));
+		panel3.setLayout(new GridLayout(3, 1, 10, 10));
+		panel.setBackground(Color.yellow);
+		panel1.setBackground(Color.yellow); 
+		panel2.setBackground(Color.yellow); 
+		panel3.setBackground(Color.yellow); 
 
-		JLabel l1 = new JLabel("Người chơi 1:"); // Nhãn "Người chơi 1"
-		l1.setForeground(Color.RED); // Thiết lập màu chữ của nhãn thành màu đỏ
-		JLabel l2 = new JLabel("Người chơi 2:"); // Nhãn "Người chơi 2"
-		l2.setForeground(Color.RED); // Thiết lập màu chữ của nhãn thành màu đỏ
-		ImageIcon icon = new ImageIcon("images/caro.png"); // Biểu tượng hình ảnh của trò chơi
-		JLabel l3 = new JLabel(icon); // Nhãn chứa biểu tượng hình ảnh
-		l3.setBounds(0, 5, 600, 520); // Đặt vị trí và kích thước của nhãn
+		JLabel l1 = new JLabel("Người chơi 1:"); 
+		l1.setForeground(Color.RED); 
+		JLabel l2 = new JLabel("Người chơi 2:");
+		l2.setForeground(Color.RED);
+		ImageIcon icon = new ImageIcon("images/caro.png"); 
+		JLabel l3 = new JLabel(icon); 
+		l3.setBounds(0, 5, 600, 520); 
 		txt2.addKeyListener(new KeyAdapter() { // Bắt sự kiện phím từ ô văn bản của Người chơi 2
 			public void keyPressed(KeyEvent evt) {
 				txt2KeyPressed(evt); // Xử lý khi nhấn phím
@@ -59,27 +59,27 @@ public class start extends JFrame implements ActionListener {
 
 		panel.add(l3); // Thêm nhãn chứa biểu tượng hình ảnh vào panel
 		panel1.add(l1); // Thêm nhãn "Người chơi 1" vào panel1
-		panel1.add(l2); // Thêm nhãn "Người chơi 2" vào panel1
+		panel1.add(l2);
 		panel2.add(txt1); // Thêm ô văn bản cho Người chơi 1 vào panel2
-		panel2.add(txt2); // Thêm ô văn bản cho Người chơi 2 vào panel2
-		panel.add(panel1); // Thêm panel1 vào panel
-		panel.add(panel2); // Thêm panel2 vào panel
+		panel2.add(txt2);
+		panel.add(panel1); 
+		panel.add(panel2);
 
-		JButton bchoi = new JButton("Bắt đầu"); // Nút "Bắt đầu"
-		bchoi.setBackground(Color.GREEN); // Thiết lập màu nền của nút thành màu xanh lá cây
-		bchoi.setActionCommand("Bat dau"); // Đặt lệnh hành động của nút thành "Bat dau"
+		JButton bchoi = new JButton("Bắt đầu"); 
+		bchoi.setBackground(Color.GREEN); 
+		bchoi.setActionCommand("Bat dau"); 
 		bchoi.addActionListener(this); // Bắt sự kiện nhấn nút
 
-		JButton bthoat = new JButton("Thoát"); // Nút "Thoát"
-		bthoat.setBackground(Color.GREEN); // Thiết lập màu nền của nút thành màu xanh lá cây
-		bthoat.setActionCommand("Thoat"); // Đặt lệnh hành động của nút thành "Thoat"
-		bthoat.addActionListener(this); // Bắt sự kiện nhấn nút
+		JButton bthoat = new JButton("Thoát");
+		bthoat.setBackground(Color.GREEN); 
+		bthoat.setActionCommand("Thoat"); 
+		bthoat.addActionListener(this); 
 
-		panel3.add(bchoi); // Thêm nút "Bắt đầu" vào panel3
-		panel3.add(bthoat); // Thêm nút "Thoát" vào panel3
+		panel3.add(bchoi); 
+		panel3.add(bthoat); 
 		panel.add(panel3); // Thêm panel3 vào panel
 
-		this.setContentPane(panel); // Đặt panel làm nội dung của cửa sổ
+		this.setContentPane(panel); 
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -88,8 +88,8 @@ public class start extends JFrame implements ActionListener {
 			}
 		
 		String a, b;
-		a = txt1.getText(); // Lấy nội dung từ ô văn bản cho Người chơi 1
-		b = txt2.getText(); // Lấy nội dung từ ô văn bản cho Người chơi 2
+		a = txt1.getText(); 
+		b = txt2.getText(); 
 		if (!a.equals("") && !b.equals("") && !a.equals(b) && a.length() < 15 && b.length() < 15) {
 			if ("Bat dau".equalsIgnoreCase(e.getActionCommand())) {
 				new play(a, b).setVisible(true); // Khởi tạo trò chơi mới và hiển thị nó
@@ -97,16 +97,15 @@ public class start extends JFrame implements ActionListener {
 			}
 		}
 	}
-
-	// Phương thức xử lý khi nhấn phím ENTER trong ô văn bản cho Người chơi 2
+	
 	private void txt2KeyPressed(KeyEvent evt) {
 		if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
 			String a, b;
-			a = txt1.getText(); // Lấy nội dung từ ô văn bản cho Người chơi 1
-			b = txt2.getText(); // Lấy nội dung từ ô văn bản cho Người chơi 2
+			a = txt1.getText(); 
+			b = txt2.getText(); 
 			if (!a.equals("") && !b.equals("") && !a.equals(b) && a.length() < 15 && b.length() < 15) {
-				new play(a, b).setVisible(true); // Khởi tạo trò chơi mới và hiển thị nó
-				this.dispose(); // Đóng cửa sổ hiện tại
+				new play(a, b).setVisible(true);
+				this.dispose(); 
 			}
 		}
 	}
